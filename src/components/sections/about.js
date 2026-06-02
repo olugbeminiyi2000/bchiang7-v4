@@ -81,8 +81,6 @@ const StyledPic = styled.div`
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
       transition: var(--transition);
     }
 
@@ -100,8 +98,7 @@ const StyledPic = styled.div`
     &:before {
       top: 0;
       left: 0;
-      background-color: var(--navy);
-      mix-blend-mode: screen;
+      background-color: transparent;
     }
 
     &:after {
@@ -125,7 +122,16 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = [
+    'Python',
+    'JavaScript',
+    'React',
+    'C',
+    'TensorFlow / PyTorch',
+    'Django / FastAPI',
+    'SQL',
+    'Git',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,33 +141,33 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Hi, I&apos;m Emmanuel &mdash; a Software Engineer and ML practitioner based in Kigali,
+              Rwanda. I recently graduated from the{' '}
+              <a href="https://www.alueducation.com/">African Leadership University</a> with a BSc.
+              in Software Engineering (Distinction), where my thesis focused on building a grammar
+              correction tool for Rwandan students using large language models.
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              My path here was anything but straight. I started studying Biochemistry at the{' '}
+              <a href="https://unilag.edu.ng/">University of Lagos</a> before making the leap to
+              software engineering &mdash; a pivot driven by the conviction that technology is the
+              fastest lever for meaningful change. Since then, I&apos;ve served as a Teaching
+              Assistant for Mathematical Foundations of ML at{' '}
+              <a href="https://www.alueducation.com/">ALU</a>, interned as a Full-Stack Engineer at{' '}
+              <a href="https://africaqs.com/">Africa Quantitative Sciences</a>, and worked at the{' '}
+              <a href="https://www.kadarinitiative.org/">
+                Kadar Initiative for Community Empowerment
+              </a>
+              .
             </p>
 
             <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
+              My main focus is building applications at the intersection of AI and real-world impact
+              &mdash; things that are technically sound and actually useful to people.
             </p>
 
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            <p>Here are a few technologies I&apos;ve been working with recently:</p>
           </div>
 
           <ul className="skills-list">
@@ -173,7 +179,7 @@ const About = () => {
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.jpg"
+              src="../../images/me.png"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}

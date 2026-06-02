@@ -47,7 +47,7 @@ const StyledCredit = styled.div`
   line-height: 1;
 
   a {
-    padding: 10px;
+    padding: 0;
   }
 
   .github-stats {
@@ -77,7 +77,7 @@ const Footer = () => {
     if (process.env.NODE_ENV !== 'production') {
       return;
     }
-    fetch('https://api.github.com/repos/bchiang7/v4')
+    fetch('https://api.github.com/repos/olugbeminiyi2000/bchiang7-v4')
       .then(response => response.json())
       .then(json => {
         const { stargazers_count, forks_count } = json;
@@ -105,22 +105,23 @@ const Footer = () => {
       </StyledSocialLinks>
 
       <StyledCredit tabindex="-1">
-        <a href="https://github.com/bchiang7/v4">
-          <div>Designed &amp; Built by Brittany Chiang</div>
+        <div>
+          Designed by <a href="https://github.com/bchiang7/v4">Brittany Chiang</a>, Built by{' '}
+          <a href="https://github.com/olugbeminiyi2000/bchiang7-v4">Emmanuel Obolo</a>
+        </div>
 
-          {githubInfo.stars && githubInfo.forks && (
-            <div className="github-stats">
-              <span>
-                <Icon name="Star" />
-                <span>{githubInfo.stars.toLocaleString()}</span>
-              </span>
-              <span>
-                <Icon name="Fork" />
-                <span>{githubInfo.forks.toLocaleString()}</span>
-              </span>
-            </div>
-          )}
-        </a>
+        {githubInfo.stars && githubInfo.forks && (
+          <div className="github-stats">
+            <span>
+              <Icon name="Star" />
+              <span>{githubInfo.stars.toLocaleString()}</span>
+            </span>
+            <span>
+              <Icon name="Fork" />
+              <span>{githubInfo.forks.toLocaleString()}</span>
+            </span>
+          </div>
+        )}
       </StyledCredit>
     </StyledFooter>
   );

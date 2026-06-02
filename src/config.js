@@ -1,26 +1,22 @@
 module.exports = {
-  email: 'brittany.chiang@gmail.com',
+  email: 'obolo.emmanuel31052000@gmail.com',
 
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/bchiang7',
+      url: 'https://github.com/olugbeminiyi2000',
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7',
+      url: 'https://www.instagram.com/ooboloemmanuel/',
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
+      url: 'https://x.com/OboloEmmanuelO1',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7',
-    },
-    {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7',
+      url: 'https://www.linkedin.com/in/emmanuel-obolo/',
     },
   ],
 
@@ -38,13 +34,17 @@ module.exports = {
       url: '/#projects',
     },
     {
+      name: 'Blog',
+      url: '/pensieve',
+    },
+    {
       name: 'Contact',
       url: '/#contact',
     },
   ],
 
   colors: {
-    green: '#64ffda',
+    green: '#93c5fd',
     navy: '#0a192f',
     darkNavy: '#020c1b',
   },
