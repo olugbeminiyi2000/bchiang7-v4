@@ -110,7 +110,9 @@ const Footer = () => {
           <a href="https://github.com/olugbeminiyi2000/bchiang7-v4">Emmanuel Obolo</a>
         </div>
 
-        {githubInfo.stars && githubInfo.forks && (
+        {githubInfo.stars !== null &&
+          githubInfo.forks !== null &&
+          githubInfo.stars + githubInfo.forks > 0 && (
           <div className="github-stats">
             <span>
               <Icon name="Star" />
