@@ -154,7 +154,7 @@ const PensievePage = ({ location, data }) => {
         <header>
           <h1 className="big-heading">Pensieve</h1>
           <p className="subtitle">
-            <a href="https://www.wizardingworld.com/writing-by-jk-rowling/pensieve">
+            <a href="https://medium.com/@obolo.emmanuel31052000" target="_blank" rel="noreferrer">
               a collection of memories
             </a>
           </p>

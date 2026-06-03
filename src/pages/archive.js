@@ -8,6 +8,7 @@ import sr from '@utils/sr';
 import { Layout } from '@components';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
+import { useTranslation } from 'react-i18next';
 
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
@@ -135,6 +136,7 @@ const ArchivePage = ({ location, data }) => {
   const revealTable = useRef(null);
   const revealProjects = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -160,26 +162,18 @@ const ArchivePage = ({ location, data }) => {
           <table>
             <thead>
               <tr>
-                <th>Year</th>
-                <th>Title</th>
-                <th className="hide-on-mobile">Made at</th>
-                <th className="hide-on-mobile">Built with</th>
-                <th>Link</th>
+                <th>{t('archive.year')}</th>
+                <th>{t('archive.title')}</th>
+                <th className="hide-on-mobile">{t('archive.madeAt')}</th>
+                <th className="hide-on-mobile">{t('archive.builtWith')}</th>
+                <th>{t('archive.link')}</th>
               </tr>
             </thead>
             <tbody>
               {projects.length > 0 &&
                 projects.map(({ node }, i) => {
-                  const {
-                    date,
-                    github,
-                    external,
-                    ios,
-                    android,
-                    title,
-                    tech,
-                    company,
-                  } = node.frontmatter;
+                  const { date, github, external, ios, android, title, tech, company } =
+                    node.frontmatter;
                   return (
                     <tr key={i} ref={el => (revealProjects.current[i] = el)}>
                       <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
@@ -187,7 +181,11 @@ const ArchivePage = ({ location, data }) => {
                       <td className="title">{title}</td>
 
                       <td className="company hide-on-mobile">
-                        {company ? <span>{company}</span> : <span>—</span>}
+                        {company ? (
+                          company
+                        ) : (
+                          <span style={{ opacity: 0.5 }}>{t('archive.independent')}</span>
+                        )}
                       </td>
 
                       <td className="tech hide-on-mobile">

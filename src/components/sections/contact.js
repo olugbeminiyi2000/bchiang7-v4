@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { srConfig, email } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
@@ -44,6 +45,7 @@ const StyledContactSection = styled.section`
 const Contact = () => {
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -55,18 +57,14 @@ const Contact = () => {
 
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
-      <h2 className="numbered-heading overline">What’s Next?</h2>
+      <h2 className="numbered-heading overline">{t('contact.overline')}</h2>
 
-      <h2 className="title">Get In Touch</h2>
+      <h2 className="title">{t('contact.heading')}</h2>
 
-      <p>
-        I&apos;m currently open to new opportunities &mdash; whether that&apos;s a full-time role,
-        internship, collaboration, or just a conversation. If you have a question or want to
-        connect, my inbox is always open and I&apos;ll do my best to get back to you!
-      </p>
+      <p>{t('contact.description')}</p>
 
       <a className="email-link" href={`mailto:${email}`}>
-        Say Hello
+        {t('contact.cta')}
       </a>
     </StyledContactSection>
   );

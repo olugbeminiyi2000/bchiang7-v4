@@ -1,5 +1,6 @@
 ---
 date: '2025-10-09'
+slug: cbc
 title: 'CBC: English Proficiency Coach'
 github: 'https://github.com/eobolo/MISSION_CAPSTONE_SOFTWARE_ENGINEERING'
 external: 'https://cbc-coach-322384350452.us-central1.run.app/intro'

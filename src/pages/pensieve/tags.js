@@ -4,6 +4,7 @@ import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { Layout } from '@components';
 
 const StyledTagsContainer = styled.main`
@@ -36,29 +37,32 @@ const TagsPage = ({
     allMarkdownRemark: { group },
   },
   location,
-}) => (
-  <Layout location={location}>
-    <Helmet title="Tags" />
+}) => {
+  const { t } = useTranslation();
+  return (
+    <Layout location={location}>
+      <Helmet title="Tags" />
 
-    <StyledTagsContainer>
-      <span className="breadcrumb">
-        <span className="arrow">&larr;</span>
-        <Link to="/pensieve">All memories</Link>
-      </span>
+      <StyledTagsContainer>
+        <span className="breadcrumb">
+          <span className="arrow">&larr;</span>
+          <Link to="/pensieve">{t('blog.allMemories')}</Link>
+        </span>
 
-      <h1>Tags</h1>
-      <ul className="fancy-list">
-        {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/pensieve/tags/${kebabCase(tag.fieldValue)}/`} className="inline-link">
-              {tag.fieldValue} <span className="count">({tag.totalCount})</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </StyledTagsContainer>
-  </Layout>
-);
+        <h1>Tags</h1>
+        <ul className="fancy-list">
+          {group.map(tag => (
+            <li key={tag.fieldValue}>
+              <Link to={`/pensieve/tags/${kebabCase(tag.fieldValue)}/`} className="inline-link">
+                {tag.fieldValue} <span className="count">({tag.totalCount})</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </StyledTagsContainer>
+    </Layout>
+  );
+};
 
 TagsPage.propTypes = {
   data: PropTypes.shape({

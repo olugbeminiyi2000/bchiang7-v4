@@ -1,5 +1,6 @@
 ---
 date: '1'
+slug: sparrAI
 title: 'Sparr AI'
 cover: './demo.png'
 github: 'https://github.com/olugbeminiyi2000/sparr-ai'

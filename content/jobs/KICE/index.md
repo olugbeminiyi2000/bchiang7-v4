@@ -1,5 +1,6 @@
 ---
 date: '2023-09-04'
+slug: kice
 title: 'IT Assistant'
 company: 'Kadar Initiative for Community Empowerment (KICE)'
 location: 'Nairobi, KE'

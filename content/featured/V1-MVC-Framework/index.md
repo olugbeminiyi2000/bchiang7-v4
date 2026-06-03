@@ -1,5 +1,6 @@
 ---
 date: '2'
+slug: v1MVC
 title: 'V1 MVC Framework'
 cover: './demo.png'
 github: 'https://github.com/olugbeminiyi2000/mvc-framework'

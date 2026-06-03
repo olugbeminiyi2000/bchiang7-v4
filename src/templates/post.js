@@ -4,6 +4,7 @@ import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { Layout } from '@components';
 
 const StyledPostContainer = styled.main`
@@ -53,6 +54,7 @@ const StyledPostContent = styled.div`
 const PostTemplate = ({ data, location }) => {
   const { frontmatter, html } = data.markdownRemark;
   const { title, date, tags } = frontmatter;
+  const { t } = useTranslation();
 
   return (
     <Layout location={location}>
@@ -61,7 +63,7 @@ const PostTemplate = ({ data, location }) => {
       <StyledPostContainer>
         <span className="breadcrumb">
           <span className="arrow">&larr;</span>
-          <Link to="/pensieve">All memories</Link>
+          <Link to="/pensieve">{t('blog.allMemories')}</Link>
         </span>
 
         <StyledPostHeader>
@@ -99,7 +101,7 @@ PostTemplate.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query($path: String!) {
+  query ($path: String!) {
     markdownRemark(frontmatter: { slug: { eq: $path } }) {
       html
       frontmatter {

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled, { keyframes } from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
@@ -118,6 +119,7 @@ const StyledItem = styled.div`
 const Learning = () => {
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -139,6 +141,7 @@ const Learning = () => {
               institution
               author
               status
+              slug
             }
           }
         }
@@ -152,14 +155,14 @@ const Learning = () => {
 
   return (
     <StyledLearningSection id="learning" ref={revealContainer}>
-      <h2 className="numbered-heading">Learning Path</h2>
+      <h2 className="numbered-heading">{t('sections.learning')}</h2>
 
       <StyledTimeline>
         {items.map(({ node }, i) => {
-          const { title, category, institution, author, status } = node.frontmatter;
+          const { title, category, institution, author, status, slug } = node.frontmatter;
           const meta = institution || author;
           const isCompleted = status === 'completed';
-          const statusLabel = isCompleted ? 'Completed' : 'In Progress';
+          const statusLabel = isCompleted ? t('learning.completed') : t('learning.inProgress');
 
           return (
             <StyledItem key={i}>
@@ -176,8 +179,10 @@ const Learning = () => {
 
               {meta && <p className="item-meta">{meta}</p>}
 
-              {node.html && (
-                <div className="item-desc" dangerouslySetInnerHTML={{ __html: node.html }} />
+              {slug && (
+                <div className="item-desc">
+                  <p>{t(`learning.${slug}`)}</p>
+                </div>
               )}
             </StyledItem>
           );

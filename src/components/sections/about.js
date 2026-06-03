@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
+import { useTranslation, Trans } from 'react-i18next';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
@@ -110,9 +111,45 @@ const StyledPic = styled.div`
   }
 `;
 
+const linkComponents = {
+  aluLink: (
+    <a
+      href="https://www.alueducation.com/"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="African Leadership University"
+    />
+  ),
+  unilagLink: (
+    <a
+      href="https://unilag.edu.ng/"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="University of Lagos"
+    />
+  ),
+  aqsLink: (
+    <a
+      href="https://africaqs.com/"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Africa Quantitative Sciences"
+    />
+  ),
+  kadarLink: (
+    <a
+      href="https://www.kadarinitiative.org/"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Kadar Initiative for Community Empowerment"
+    />
+  ),
+};
+
 const About = () => {
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -135,39 +172,22 @@ const About = () => {
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
-      <h2 className="numbered-heading">About Me</h2>
+      <h2 className="numbered-heading">{t('about.heading')}</h2>
 
       <div className="inner">
         <StyledText>
           <div>
             <p>
-              Hi, I&apos;m Emmanuel &mdash; a Software Engineer and ML practitioner based in Kigali,
-              Rwanda. I recently graduated from the{' '}
-              <a href="https://www.alueducation.com/">African Leadership University</a> with a BSc.
-              in Software Engineering (Distinction), where my thesis focused on building a grammar
-              correction tool for Rwandan students using large language models.
+              <Trans i18nKey="about.p1" components={linkComponents} />
             </p>
 
             <p>
-              My path here was anything but straight. I started studying Biochemistry at the{' '}
-              <a href="https://unilag.edu.ng/">University of Lagos</a> before making the leap to
-              software engineering &mdash; a pivot driven by the conviction that technology is the
-              fastest lever for meaningful change. Since then, I&apos;ve served as a Teaching
-              Assistant for Mathematical Foundations of ML at{' '}
-              <a href="https://www.alueducation.com/">ALU</a>, interned as a Full-Stack Engineer at{' '}
-              <a href="https://africaqs.com/">Africa Quantitative Sciences</a>, and worked at the{' '}
-              <a href="https://www.kadarinitiative.org/">
-                Kadar Initiative for Community Empowerment
-              </a>
-              .
+              <Trans i18nKey="about.p2" components={linkComponents} />
             </p>
 
-            <p>
-              My main focus is building applications at the intersection of AI and real-world impact
-              &mdash; things that are technically sound and actually useful to people.
-            </p>
+            <p>{t('about.p3')}</p>
 
-            <p>Here are a few technologies I&apos;ve been working with recently:</p>
+            <p>{t('about.skills_intro')}</p>
           </div>
 
           <ul className="skills-list">

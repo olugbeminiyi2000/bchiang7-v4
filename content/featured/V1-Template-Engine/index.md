@@ -1,5 +1,6 @@
 ---
 date: '3'
+slug: v1TE
 title: 'V1 Template Engine (V1TE)'
 cover: './demo.png'
 external: 'https://template-engine-docs-322384350452.us-central1.run.app'

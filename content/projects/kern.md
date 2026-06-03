@@ -1,5 +1,6 @@
 ---
 date: '2026-01-02'
+slug: kern
 title: 'Kern: An Hot Reloader Engine'
 github: 'https://github.com/olugbeminiyi2000/Kern'
 external: 'https://kern-docs-322384350452.us-central1.run.app/'

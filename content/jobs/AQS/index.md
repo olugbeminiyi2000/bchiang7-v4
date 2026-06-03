@@ -1,5 +1,6 @@
 ---
 date: '2024-08-02'
+slug: aqs
 title: 'Full-Stack Engineer Intern'
 company: 'Africa Quantitative Sciences (AQS)'
 location: 'Kigali, RW'

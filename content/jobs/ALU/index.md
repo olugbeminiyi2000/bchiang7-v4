@@ -1,5 +1,6 @@
 ---
 date: '2025-12-18'
+slug: alu
 title: 'Teaching Assistant'
 company: 'African Leadership University (ALU)'
 location: 'Kigali, RW'

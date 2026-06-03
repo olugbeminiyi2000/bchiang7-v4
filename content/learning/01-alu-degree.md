@@ -1,5 +1,6 @@
 ---
 order: 1
+slug: aluDegree
 title: 'BSc. Software Engineering & Machine Learning'
 category: 'Degree'
 institution: 'African Leadership University'

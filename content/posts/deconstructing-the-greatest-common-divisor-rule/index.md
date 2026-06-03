@@ -12,6 +12,6 @@ tags:
   - Python
 ---
 
-Finding the GCD of two numbers naively means trying every integer up to min(a, b), fine for small inputs, painful at scale. The Euclidean Algorithm solves it in a fraction of the steps, but only because of one non-obvious fact: if a and b are both divisible by d, then the remainder r of a divided by b must also be divisible by d. This post proves that fact from first principles using the Division Algorithm, then walks through the termination condition and the two special cases involving zero — including why GCD(0, 0) is formally defined as 0 rather than left undefined.
+Finding the GCD of two numbers naively means trying every integer up to min(a, b), fine for small inputs, painful at scale. The Euclidean Algorithm solves it in a fraction of the steps, but only because of one non-obvious fact: if a and b are both divisible by d, then the remainder r of a divided by b must also be divisible by d. This post proves that fact from first principles using the Division Algorithm, then walks through the termination condition and the two special cases involving zero, including why GCD(0, 0) is formally defined as 0 rather than left undefined.
 
 [Read the full post on Medium &rarr;](https://medium.com/@obolo.emmanuel31052000/deconstructing-the-greatest-common-divisor-rule-0a47a09ecc95)

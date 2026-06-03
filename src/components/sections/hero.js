@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
+import { useTranslation, Trans } from 'react-i18next';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 
@@ -49,6 +50,7 @@ const StyledHeroSection = styled.section`
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -59,25 +61,29 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1>Hi, my name is</h1>;
+  const one = <h1>{t('hero.greeting')}</h1>;
   const two = <h2 className="big-heading">Emmanuel Obolo.</h2>;
-  const three = <h3 className="big-heading">I Love Engineering.</h3>;
+  const three = <h3 className="big-heading">{t('hero.tagline')}</h3>;
   const four = (
-    <>
-      <p>
-        I'm a Machine Learning &amp; Software Engineer with a passion for building impactful
-        applications that leverage AI/ML to improve people's lives. A graduate of{' '}
-        <a href="https://www.alueducation.com/" target="_blank" rel="noreferrer">
-          African Leadership University
-        </a>
-        , I'm driven by the belief that technology and education are catalysts for global
-        transformation.
-      </p>
-    </>
+    <p>
+      <Trans
+        i18nKey="hero.description"
+        components={{
+          aluLink: (
+            <a
+              href="https://www.alueducation.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="African Leadership University"
+            />
+          ),
+        }}
+      />
+    </p>
   );
   const five = (
     <a className="email-link" href="/#contact">
-      Get In Touch
+      {t('hero.cta')}
     </a>
   );
 
