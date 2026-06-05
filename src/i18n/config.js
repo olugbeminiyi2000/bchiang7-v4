@@ -37,6 +37,7 @@ if (typeof window !== 'undefined') {
   const setDocDir = lng => {
     document.documentElement.lang = lng;
     document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.setAttribute('data-lang', lng);
   };
   i18n.on('languageChanged', setDocDir);
 }
