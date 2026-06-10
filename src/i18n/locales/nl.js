@@ -34,6 +34,8 @@ const nl = {
     viewArchive: 'bekijk het archief',
     cbc: 'De CBC Feedback Coach is een geavanceerd grammaticacorrectiesysteem ontworpen om educatieve feedback te bieden die is afgestemd op de richtlijnen van het Competentiegericht Curriculum (CBC) van Rwanda. Dit project pakt de kritieke behoefte aan geautomatiseerde grammaticacorrectietools aan die niet alleen grammaticale fouten identificeren en corrigeren, maar ook betekenisvolle educatieve uitleg bieden die het leren van leerkrachten en studenten in de Rwandese onderwijscontext ondersteunt.',
     kern: 'kern bewaakt je Python-script en elk bestand dat daarmee verbonden is. Wanneer iets in dat graaf verandert, herlaadt kern alleen de getroffen modules zonder je proces te herstarten of de terminalstatus te verliezen. Gebouwd voor pure Python-scripts waar toestand belangrijk is: AI-experimenten, terminalsessies, langlopende tools.',
+    'life-prescriber':
+      'Life Prescriber verbindt ziekenhuizen en apotheken via een gedeelde receptworkflow. Ziekenhuisartsen registreren patiënten en bekijken medicijnengeschiedenis in alleen-lezen modus via een beveiligd portaal. Apothekers voegen recepten toe en beheren ze via een apart schrijftoegangsportaal. Elke instelling heeft zijn eigen toegangsbereik; hoofdgebruikers kunnen medewerkers uitnodigen via tijdelijke e-mailtokens. Gebouwd met Django, ingezet op GCP Cloud Run.',
   },
   learning: {
     completed: 'Voltooid',
