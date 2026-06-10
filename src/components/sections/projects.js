@@ -145,6 +145,24 @@ const StyledProject = styled.li`
     }
   }
 
+  .project-demo {
+    margin-top: 12px;
+    padding: 8px 10px;
+    border-radius: var(--border-radius);
+    background-color: var(--green-tint);
+    border-left: 3px solid var(--green);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
+    color: var(--slate);
+    line-height: 1.5;
+
+    .demo-label {
+      color: var(--green);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+  }
+
   .project-tech-list {
     display: flex;
     align-items: flex-end;
@@ -184,6 +202,7 @@ const Projects = () => {
               github
               external
               slug
+              demo
             }
           }
         }
@@ -215,7 +234,7 @@ const Projects = () => {
 
   const projectInner = node => {
     const { frontmatter } = node;
-    const { github, external, title, tech, slug } = frontmatter;
+    const { github, external, title, tech, slug, demo } = frontmatter;
 
     return (
       <div className="project-inner">
@@ -252,6 +271,13 @@ const Projects = () => {
           <div className="project-description">
             <p>{t(`projects.${slug}`)}</p>
           </div>
+
+          {demo && (
+            <div className="project-demo">
+              <div className="demo-label">Try it live</div>
+              <div>{demo}</div>
+            </div>
+          )}
         </header>
 
         <footer>

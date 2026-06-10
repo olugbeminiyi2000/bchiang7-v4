@@ -11,6 +11,7 @@ tech:
   - GCP Cloud Run
   - Gunicorn
 showInProjects: true
+demo: 'Hospital: hospital_head / sitdownhere · Pharmacy: pharmacy_head / sitdownhere'
 ---
 
 Life Prescriber connects hospitals and pharmacies through a shared prescription workflow. Hospital clinicians register patients and view drug history in read-only mode through a secured portal. Pharmacists add and manage prescriptions through a separate write-access portal. Each institution gets its own access scope, with head users able to invite staff via time-limited email tokens. Built with Django, deployed on GCP Cloud Run with Gunicorn and WhiteNoise.
